@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — PluggedIn</title>
+<meta name="description" content="Privacy policy for the PluggedIn EV smart-charging app. No servers, no accounts, no tracking.">
+<style>
+  :root {
+    --paper:#F6F8F5; --card:#FFFFFF; --ink:#101F19; --muted:#5E6F66;
+    --hairline:#DCE3DD; --forest:#1C4A38; --forest-dim:#E6EEE9; --bolt:#E5A50A;
+    --serif: Georgia,'Iowan Old Style','Times New Roman',serif;
+    --sans: system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:#0C1512; --card:#131F1A; --ink:#E7EFE9; --muted:#93A79B;
+      --hairline:#26362F; --forest:#7FC6A4; --forest-dim:#172C23; --bolt:#F2BE3C;
+    }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:17px; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:41rem;margin:0 auto;padding:0 1.4rem 5rem}
+  header{padding:3.4rem 0 1.4rem}
+  .mark{
+    font-family:var(--serif);font-weight:700;font-size:1rem;
+    color:var(--forest);letter-spacing:-.01em;margin:0 0 1.6rem
+  }
+  .mark span{color:var(--bolt)}
+  h1{
+    font-family:var(--serif);font-weight:400;font-size:clamp(2rem,6vw,2.7rem);
+    line-height:1.1;letter-spacing:-.02em;margin:0 0 .5rem
+  }
+  .updated{font-size:.85rem;color:var(--muted);margin:0}
+  .lede{font-size:1.05rem;color:var(--muted);margin:1.4rem 0 0}
+  h2{
+    font-family:var(--serif);font-weight:400;font-size:1.4rem;line-height:1.25;
+    letter-spacing:-.012em;margin:2.8rem 0 .3rem;padding-top:1.6rem;
+    border-top:1px solid var(--hairline)
+  }
+  h3{font-size:.98rem;font-weight:650;margin:1.8rem 0 .4rem;color:var(--forest)}
+  p{margin:0 0 1rem}
+  a{color:var(--forest);text-underline-offset:2px}
+  strong{font-weight:650}
+  ul{margin:0 0 1rem;padding-left:1.15rem}
+  li{margin-bottom:.4rem}
+  li::marker{color:var(--bolt)}
+  .callout{
+    background:var(--forest-dim);border-left:3px solid var(--bolt);
+    border-radius:0 3px 3px 0;padding:1.1rem 1.3rem;margin:0 0 1.2rem
+  }
+  .callout p:last-child{margin-bottom:0}
+  .field{margin:0 0 .9rem}
+  .field b{
+    display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;margin-bottom:.1rem
+  }
+  .addr{
+    background:var(--card);border:1px solid var(--hairline);border-radius:3px;
+    padding:1rem 1.2rem;margin:0 0 1.2rem;font-size:.95rem
+  }
+  footer{
+    margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--hairline);
+    font-size:.82rem;color:var(--muted)
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="mark">Plugged<span>In</span></p>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: 28 July 2026</p>
+  <p class="lede">PluggedIn charges your electric car when electricity is cheapest. This page explains exactly what data that involves, where it goes, and what control you have over it.</p>
+</header>
+
+<h2>The short version</h2>
+<div class="callout">
+  <p><strong>PluggedIn has no servers.</strong> There is no PluggedIn account, no login, and no database anywhere holding your information. Everything the app knows about you stays on your phone.</p>
+  <p>We do not collect, receive, store, sell, or share your personal data — we genuinely never see it. There is no analytics, no crash reporting, no advertising, and no tracking of any kind in this app.</p>
+  <p>The app does talk to other companies' services — your charger's cloud, your car's cloud, a public charger directory — but only the ones <strong>you</strong> choose to connect, and it talks to them directly from your phone.</p>
+</div>
+
+<h2>1. Who is responsible</h2>
+<p>The app is developed and published by:</p>
+<div class="addr">
+  <div class="field"><b>Controller</b>Fabio Barboni Stern</div>
+  <div class="field"><b>Country</b>Denmark</div>
+  <div class="field"><b>Contact</b><a href="mailto:pluggedin.app.support@gmail.com">pluggedin.app.support@gmail.com</a></div>
+</div>
+<p>Under the GDPR this makes him the <em>data controller</em> for the limited processing described below. In practice the role is narrow, because no data is transmitted to him or to any system he operates.</p>
+
+<h2>2. What data the app handles, and why</h2>
+
+<h3>2.1 Location — only in "Find a Charger"</h3>
+<p><strong>What:</strong> your device's approximate and precise location.</p>
+<p><strong>When:</strong> only while you have the <em>Find a Charger</em> screen open. Never in the background, and never if you don't use that feature.</p>
+<p><strong>Why:</strong> to show public charging stations near you and rank them by distance and price.</p>
+<p><strong>Where it goes:</strong> your coordinates are sent to <strong>OpenChargeMap</strong> to retrieve nearby stations, and map tiles are requested from <strong>OpenStreetMap</strong>, which necessarily reveals the area you are viewing. Your location is not stored by PluggedIn, not written to a file, and not logged.</p>
+<p><strong>Legal basis:</strong> your consent, given through the Android location permission. You can withdraw it at any time in Android Settings; the rest of the app keeps working without it.</p>
+
+<h3>2.2 Your charger account (Easee)</h3>
+<p><strong>What:</strong> the email address and password you enter to sign in to Easee, which are exchanged immediately for access tokens; then your charger's ID, status, and charging session history.</p>
+<p><strong>Why:</strong> to start and stop charging at the right time, and to show what your charging actually cost.</p>
+<p><strong>Where it goes:</strong> directly to <strong>Easee's</strong> cloud service (Norway, within the EEA). Your Easee password is used only for that sign-in and is <strong>not stored</strong>. The resulting tokens are kept encrypted on your device.</p>
+<p><strong>Legal basis:</strong> necessary to provide the service you asked for.</p>
+
+<h3>2.3 Your vehicle account (Tesla, Tessie, or Smartcar — optional)</h3>
+<p><strong>What:</strong> authorisation tokens for the service you connect, and your car's battery percentage.</p>
+<p><strong>Why:</strong> so charging can stop at your target battery level instead of overcharging.</p>
+<p><strong>Where it goes:</strong> directly to whichever you connect — <strong>Tesla</strong>, <strong>Tessie</strong>, or <strong>Smartcar</strong>. The app requests only battery level and basic vehicle information. It does not request or store your VIN, location, driving history, or any other vehicle data.</p>
+<p><strong>Legal basis:</strong> your consent. This feature is entirely optional; the app schedules charging perfectly well without it.</p>
+
+<h3>2.4 Electricity prices and grid carbon intensity</h3>
+<p><strong>What:</strong> your price area only — DK1 or DK2, which covers roughly half of Denmark each.</p>
+<p><strong>Where it goes:</strong> <strong>Energi Data Service</strong> and <strong>Energinet</strong>. No personal data is involved; these requests say nothing about you beyond which half of the country you are in.</p>
+
+<h3>2.5 Your settings and charging history</h3>
+<p><strong>What:</strong> your car model, charger, electricity tariff, schedules, and past charging sessions.</p>
+<p><strong>Where it goes:</strong> nowhere. This is stored on your device only.</p>
+<p>If you have <strong>Android Auto Backup</strong> enabled, Android may copy app settings to <em>your own</em> Google Drive, under your Google account. That is a feature of Android, controlled by you in your device settings, and the backup is not accessible to PluggedIn. Your charger and vehicle tokens are deliberately excluded from it.</p>
+
+<h3>2.6 Notifications</h3>
+<p>Generated on your device. No notification service or push provider is involved, and nothing about your charging leaves the phone to produce them.</p>
+
+<h3>2.7 The "what you could have saved" figure</h3>
+<p>When you first connect your charger, the app imports your past charging sessions and calculates what optimised charging would have saved you. <strong>This calculation happens entirely on your device.</strong> Nothing is transmitted, and no aggregate is shared with anyone.</p>
+<p>If a future version offers to share anonymised statistics, it will be strictly opt-in, off by default, and described here before it ships.</p>
+
+<h2>3. What the app does not do</h2>
+<ul>
+  <li>No advertising, ad networks, or ad identifiers</li>
+  <li>No analytics or usage tracking</li>
+  <li>No crash or diagnostics reporting</li>
+  <li>No PluggedIn account, and no PluggedIn server</li>
+  <li>No selling or sharing of data with anyone</li>
+  <li>No profiling or automated decisions with legal effects</li>
+  <li>Nothing is collected from children, and the app is not directed at them</li>
+</ul>
+
+<h2>4. Data leaving the EU/EEA</h2>
+<p>Some services you may connect operate outside the EEA — notably <strong>Tesla</strong>, <strong>Tessie</strong>, and <strong>Smartcar</strong> (United States), and <strong>OpenChargeMap</strong> (United Kingdom).</p>
+<p>Those transfers happen because you chose to connect that account, and they are governed by that company's own privacy policy and terms, which apply directly between you and them. PluggedIn does not route your data through any intermediary. <strong>Easee</strong> operates within the EEA.</p>
+<p>We recommend reading the privacy policy of any service before connecting it.</p>
+
+<h2>5. How long data is kept</h2>
+<p>On your device, until you delete it. Because there is no server, there is nothing for us to retain, and nothing for us to delete on your behalf.</p>
+<p><strong>To erase everything:</strong></p>
+<ul>
+  <li>Delete individual charging sessions in the app's history, or</li>
+  <li>Disconnect your charger or vehicle in Setup, which deletes the stored tokens, or</li>
+  <li>Uninstall PluggedIn, which removes all app data from your device</li>
+</ul>
+<p>Data already held by Easee, Tesla, Tessie, or Smartcar belongs to your account with them and must be deleted through them.</p>
+
+<h2>6. Security</h2>
+<p>Charger and vehicle access tokens are stored using <strong>Android's Keystore-backed encrypted storage</strong>, not in plain text. Those keys are bound to your device, which is also why the tokens do not survive a transfer to a new phone — you simply sign in again.</p>
+<p>All communication with external services uses HTTPS.</p>
+<p>No system is perfectly secure, but the strongest protection here is structural: there is no central database to breach, because there is no central database.</p>
+
+<h2>7. Your rights under the GDPR</h2>
+<p>You have the right to access, correct, erase, restrict, and port your personal data, to object to processing, and to withdraw consent at any time.</p>
+<p>Because your data is on your device and not on any server we operate, you can exercise most of these directly and immediately — the app's Setup screen and your Android settings give you more direct control than a request to us could. If you would like help, or believe something here is inaccurate, contact <a href="mailto:pluggedin.app.support@gmail.com">pluggedin.app.support@gmail.com</a>.</p>
+<p>You also have the right to lodge a complaint with the Danish Data Protection Agency:</p>
+<div class="addr">
+  <div class="field"><b>Authority</b>Datatilsynet</div>
+  <div class="field"><b>Address</b>Carl Jacobsens Vej 35, 2500 Valby, Denmark</div>
+  <div class="field"><b>Web</b><a href="https://www.datatilsynet.dk">datatilsynet.dk</a></div>
+</div>
+
+<h2>8. Changes to this policy</h2>
+<p>If the app's data handling changes — in particular if a backend, an account system, or optional statistics sharing is ever added — this page will be updated before that version is released, and the date at the top will change.</p>
+
+<h2>9. Contact</h2>
+<p>Questions about this policy or your data: <a href="mailto:pluggedin.app.support@gmail.com">pluggedin.app.support@gmail.com</a></p>
+
+<footer>
+  PluggedIn — smart EV charging for Danish electricity prices.
+  This page is the privacy policy referenced by the PluggedIn Android app
+  (<code>com.pluggedin.app</code>).
+</footer>
+
+</div>
+</body>
+</html>
