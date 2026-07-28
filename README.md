@@ -8,7 +8,7 @@ which Google Play requires. **The app's source code is not here.**
 
 | Page | URL |
 |---|---|
-| Privacy policy | https://fabiolonus.github.io/pluggedin-legal/ |
+| Privacy policy | https://fbbrbn.github.io/pluggedin-legal/ |
 
 ## Editing
 
