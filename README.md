@@ -9,10 +9,12 @@ which Google Play requires. **The app's source code is not here.**
 | Page | URL |
 |---|---|
 | Privacy policy | https://fbbrbn.github.io/pluggedin-legal/ |
+| Terms of Use | https://fbbrbn.github.io/pluggedin-legal/terms.html |
 
 ## Editing
 
-`docs/PRIVACY.md` in the main application repository is the canonical source.
+`docs/PRIVACY.md` and `docs/TERMS.md` in the main application repository are the
+canonical sources.
 `index.html` here is the published rendering of it — update the source first,
 then bring this copy in line, so the two cannot drift apart silently.
 

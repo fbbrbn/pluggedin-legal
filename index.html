@@ -125,10 +125,16 @@
 <p><strong>Where it goes:</strong> nowhere. This is stored on your device only.</p>
 <p>If you have <strong>Android Auto Backup</strong> enabled, Android may copy app settings to <em>your own</em> Google Drive, under your Google account. That is a feature of Android, controlled by you in your device settings, and the backup is not accessible to PluggedIn. Your charger and vehicle tokens are deliberately excluded from it.</p>
 
-<h3>2.6 Notifications</h3>
+<h3>2.6 Opening a charger in Google Maps</h3>
+<p>If you tap "open in Google Maps" on a public charger, the app hands that <strong>charger's</strong> coordinates to Google Maps on your device. Your own location is not included. This only happens when you tap it, and what Google does then is governed by your relationship with Google, not with us.</p>
+
+<h3>2.7 Diagnostic logs</h3>
+<p>The app writes technical messages to Android's system log to make faults diagnosable — for example "token refresh failed, HTTP 401". These record <em>what happened</em>, never credentials, tokens, coordinates, or the contents of server responses. They stay on your device, are not collected, and are cleared by Android over time.</p>
+
+<h3>2.8 Notifications</h3>
 <p>Generated on your device. No notification service or push provider is involved, and nothing about your charging leaves the phone to produce them.</p>
 
-<h3>2.7 The "what you could have saved" figure</h3>
+<h3>2.9 The "what you could have saved" figure</h3>
 <p>When you first connect your charger, the app imports your past charging sessions and calculates what optimised charging would have saved you. <strong>This calculation happens entirely on your device.</strong> Nothing is transmitted, and no aggregate is shared with anyone.</p>
 <p>If a future version offers to share anonymised statistics, it will be strictly opt-in, off by default, and described here before it ships.</p>
 
@@ -143,12 +149,23 @@
   <li>Nothing is collected from children, and the app is not directed at them</li>
 </ul>
 
-<h2>4. Data leaving the EU/EEA</h2>
+<h2>4. If you choose not to provide something</h2>
+<p>Nothing here is compulsory, and refusing has proportionate consequences rather than locking you out:</p>
+<ul>
+  <li><strong>No location</strong> — the rest of the app works; only <em>Find a Charger</em> is unavailable.</li>
+  <li><strong>No charger connection</strong> — you can still see prices, tariffs and plan charging by hand; automatic start/stop is unavailable.</li>
+  <li><strong>No vehicle connection</strong> — charging is scheduled by time and estimated energy instead of stopping at an exact battery percentage.</li>
+  <li><strong>No notifications</strong> — scheduling still runs; you simply are not told about it.</li>
+</ul>
+<p>There is no account to create, so there is no minimum amount of information you must hand over to use PluggedIn at all.</p>
+
+<h2>5. Data leaving the EU/EEA</h2>
 <p>Some services you may connect operate outside the EEA — notably <strong>Tesla</strong>, <strong>Tessie</strong>, and <strong>Smartcar</strong> (United States), and <strong>OpenChargeMap</strong> (United Kingdom).</p>
 <p>Those transfers happen because you chose to connect that account, and they are governed by that company's own privacy policy and terms, which apply directly between you and them. PluggedIn does not route your data through any intermediary. <strong>Easee</strong> operates within the EEA.</p>
+<p>Under the GDPR, the basis for these transfers is your <strong>explicit consent</strong> to connect that specific account (Article 49(1)(a)); you are told which company is involved before you connect, and you can disconnect at any time in Setup. Each of these providers additionally publishes its own transfer safeguards, such as EU Standard Contractual Clauses, which apply to the relationship between you and them.</p>
 <p>We recommend reading the privacy policy of any service before connecting it.</p>
 
-<h2>5. How long data is kept</h2>
+<h2>6. How long data is kept</h2>
 <p>On your device, until you delete it. Because there is no server, there is nothing for us to retain, and nothing for us to delete on your behalf.</p>
 <p><strong>To erase everything:</strong></p>
 <ul>
@@ -158,12 +175,12 @@
 </ul>
 <p>Data already held by Easee, Tesla, Tessie, or Smartcar belongs to your account with them and must be deleted through them.</p>
 
-<h2>6. Security</h2>
+<h2>7. Security</h2>
 <p>Charger and vehicle access tokens are stored using <strong>Android's Keystore-backed encrypted storage</strong>, not in plain text. Those keys are bound to your device, which is also why the tokens do not survive a transfer to a new phone — you simply sign in again.</p>
 <p>All communication with external services uses HTTPS.</p>
 <p>No system is perfectly secure, but the strongest protection here is structural: there is no central database to breach, because there is no central database.</p>
 
-<h2>7. Your rights under the GDPR</h2>
+<h2>8. Your rights under the GDPR</h2>
 <p>You have the right to access, correct, erase, restrict, and port your personal data, to object to processing, and to withdraw consent at any time.</p>
 <p>Because your data is on your device and not on any server we operate, you can exercise most of these directly and immediately — the app's Setup screen and your Android settings give you more direct control than a request to us could. If you would like help, or believe something here is inaccurate, contact <a href="mailto:pluggedin.app.support@gmail.com">pluggedin.app.support@gmail.com</a>.</p>
 <p>You also have the right to lodge a complaint with the Danish Data Protection Agency:</p>
@@ -173,10 +190,11 @@
   <div class="field"><b>Web</b><a href="https://www.datatilsynet.dk">datatilsynet.dk</a></div>
 </div>
 
-<h2>8. Changes to this policy</h2>
+<h2>9. Changes to this policy</h2>
 <p>If the app's data handling changes — in particular if a backend, an account system, or optional statistics sharing is ever added — this page will be updated before that version is released, and the date at the top will change.</p>
 
-<h2>9. Contact</h2>
+<h2>10. Contact</h2>
+<p>See also the <a href="terms.html">Terms of Use</a>.</p>
 <p>Questions about this policy or your data: <a href="mailto:pluggedin.app.support@gmail.com">pluggedin.app.support@gmail.com</a></p>
 
 <footer>
