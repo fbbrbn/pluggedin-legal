@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — PluggedIn</title>
-<meta name="description" content="Privacy policy for the PluggedIn EV smart-charging app. No servers, no accounts, no tracking.">
+<meta name="description" content="Privacy policy for the PluggedIn EV smart-charging app. No accounts, no tracking; your charging data never leaves your phone.">
 <style>
   :root {
     --paper:#F6F8F5; --card:#FFFFFF; --ink:#101F19; --muted:#5E6F66;
@@ -75,15 +75,16 @@
 <header>
   <p class="mark">Plugged<span>In</span></p>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: 28 July 2026</p>
+  <p class="updated">Last updated: 2 August 2026</p>
   <p class="lede">PluggedIn charges your electric car when electricity is cheapest. This page explains exactly what data that involves, where it goes, and what control you have over it.</p>
 </header>
 
 <h2>The short version</h2>
 <div class="callout">
-  <p><strong>PluggedIn has no servers.</strong> There is no PluggedIn account, no login, and no database anywhere holding your information. Everything the app knows about you stays on your phone.</p>
-  <p>We do not collect, receive, store, sell, or share your personal data — we genuinely never see it. There is no analytics, no crash reporting, no advertising, and no tracking of any kind in this app.</p>
-  <p>The app does talk to other companies' services — your charger's cloud, your car's cloud, a public charger directory — but only the ones <strong>you</strong> choose to connect, and it talks to them directly from your phone.</p>
+  <p><strong>There is no PluggedIn account and no login.</strong> Your charging history, your settings, your tariff, your car — all of it stays on your phone. None of it is ever sent to us.</p>
+  <p>PluggedIn does now operate a small backend. It exists to keep a secret out of the app and to keep price data current, <strong>not</strong> to collect anything about you. The only thing it stores is a random installation identifier and, if you allow notifications, the anonymous push token Android issues for this install. No email, no name, no location, no charging data, no vehicle data.</p>
+  <p>There is no analytics, no crash reporting, no advertising, and no tracking of any kind in this app.</p>
+  <p>The app also talks to other companies' services — your charger's cloud, your car's cloud, a public charger directory — but only the ones <strong>you</strong> choose to connect, and it talks to them directly from your phone, not through us.</p>
 </div>
 
 <h2>1. Who is responsible</h2>
@@ -93,7 +94,8 @@
   <div class="field"><b>Country</b>Denmark</div>
   <div class="field"><b>Contact</b><a href="mailto:pluggedin.app.support@gmail.com">pluggedin.app.support@gmail.com</a></div>
 </div>
-<p>Under the GDPR this makes him the <em>data controller</em> for the limited processing described below. In practice the role is narrow, because no data is transmitted to him or to any system he operates.</p>
+<p>Under the GDPR this makes him the <em>data controller</em> for the processing described below. The role remains narrow: almost everything happens on your device, and the backend he operates holds only the installation identifier and push token described in section 2.10.</p>
+<p><strong>Processor:</strong> the backend runs on <strong>Google Cloud / Firebase</strong>, which processes data on his instructions under Google's Data Processing Addendum.</p>
 
 <h2>2. What data the app handles, and why</h2>
 
@@ -114,6 +116,7 @@
 <p><strong>What:</strong> authorisation tokens for the service you connect, and your car's battery percentage.</p>
 <p><strong>Why:</strong> so charging can stop at your target battery level instead of overcharging.</p>
 <p><strong>Where it goes:</strong> directly to whichever you connect — <strong>Tesla</strong>, <strong>Tessie</strong>, or <strong>Smartcar</strong>. The app requests only battery level and basic vehicle information. It does not request or store your VIN, location, driving history, or any other vehicle data.</p>
+<p>For <strong>Smartcar</strong> specifically, one step passes through our backend. Smartcar requires a confidential credential that cannot safely be embedded in a phone app, so the app asks our backend to obtain a short-lived access token on its behalf. <strong>That request contains nothing about you or your car</strong> — it is an empty request, and the reply is a token valid for about an hour. Your vehicle data then travels directly between your phone and Smartcar. Our backend never sees your battery level, your car, or your vehicle identifiers.</p>
 <p><strong>Legal basis:</strong> your consent. This feature is entirely optional; the app schedules charging perfectly well without it.</p>
 
 <h3>2.4 Electricity prices and grid carbon intensity</h3>
@@ -132,18 +135,34 @@
 <p>The app writes technical messages to Android's system log to make faults diagnosable — for example "token refresh failed, HTTP 401". These record <em>what happened</em>, never credentials, tokens, coordinates, or the contents of server responses. They stay on your device, are not collected, and are cleared by Android over time.</p>
 
 <h3>2.8 Notifications</h3>
-<p>Generated on your device. No notification service or push provider is involved, and nothing about your charging leaves the phone to produce them.</p>
+<p><strong>Every notification you currently receive is generated on your device.</strong> Nothing about your charging leaves the phone to produce them.</p>
+<p>If you grant notification permission, Android issues this installation a <strong>Firebase Cloud Messaging token</strong> — an anonymous identifier for the app on this device — and the app sends that token to our backend (see section 2.10). It is stored so that a future version can start charging via a server-sent message, which is the only way this can work reliably on iOS. <strong>No push message is sent to you today</strong>; the capability is registered but unused.</p>
+<p>Revoking notification permission, or uninstalling, invalidates the token.</p>
 
 <h3>2.9 The "what you could have saved" figure</h3>
 <p>When you first connect your charger, the app imports your past charging sessions and calculates what optimised charging would have saved you. <strong>This calculation happens entirely on your device.</strong> Nothing is transmitted, and no aggregate is shared with anyone.</p>
 <p>If a future version offers to share anonymised statistics, it will be strictly opt-in, off by default, and described here before it ships.</p>
+
+<h3>2.10 The PluggedIn backend</h3>
+<p>Since 2 August 2026 the app talks to a small backend of ours, hosted on Google Cloud / Firebase. This is what it does, in full.</p>
+<p><strong>An anonymous installation identity.</strong> On first launch the app signs in <em>anonymously</em>. This produces a random identifier for this installation — not for you. There is no email address, no password, no profile, and no way to link it to your identity or to another device. Reinstalling the app produces a new one.</p>
+<p><strong>What we store:</strong> exactly one record, holding the push token from section 2.8 and the time it was last updated, filed under that random identifier. That is the entirety of the PluggedIn database. It lives in Google's <strong>Frankfurt, Germany</strong> region and is readable only by that same installation.</p>
+<p><strong>What the backend does <em>not</em> receive:</strong> your charging history, your settings, your tariff, your car, your charger, your location, your battery level, your Easee or Tesla or Smartcar credentials, or anything you have typed into the app. None of it is transmitted, so none of it can be stored.</p>
+<p><strong>Two things the app downloads from us</strong>, both plain public files containing no personal data:</p>
+<ul>
+  <li>electricity tariff rates for Danish grid companies, so a rate change does not require an app update;</li>
+  <li>public charging prices published under Denmark's National Access Point, refreshed nightly.</li>
+</ul>
+<p>Downloading a file necessarily reveals your device's IP address to the server, as it does for any website. These files are static, identical for everyone, and are not personalised or logged against you.</p>
+<p><strong>Server logs.</strong> Google records standard technical request logs for the backend (timestamps, IP address, response codes) for operational and security purposes, retained on Google's default schedule. These are not used to build any profile.</p>
+<p><strong>Legal basis:</strong> our legitimate interest in operating and securing the service (Article 6(1)(f)) for the installation identifier and the technical logs; your consent, via the Android notification permission, for the push token.</p>
 
 <h2>3. What the app does not do</h2>
 <ul>
   <li>No advertising, ad networks, or ad identifiers</li>
   <li>No analytics or usage tracking</li>
   <li>No crash or diagnostics reporting</li>
-  <li>No PluggedIn account, and no PluggedIn server</li>
+  <li>No PluggedIn account, no login, and no password to remember</li>
   <li>No selling or sharing of data with anyone</li>
   <li>No profiling or automated decisions with legal effects</li>
   <li>Nothing is collected from children, and the app is not directed at them</li>
@@ -161,28 +180,37 @@
 
 <h2>5. Data leaving the EU/EEA</h2>
 <p>Some services you may connect operate outside the EEA — notably <strong>Tesla</strong>, <strong>Tessie</strong>, and <strong>Smartcar</strong> (United States), and <strong>OpenChargeMap</strong> (United Kingdom).</p>
-<p>Those transfers happen because you chose to connect that account, and they are governed by that company's own privacy policy and terms, which apply directly between you and them. PluggedIn does not route your data through any intermediary. <strong>Easee</strong> operates within the EEA.</p>
+<p>Those transfers happen because you chose to connect that account, and they are governed by that company's own privacy policy and terms, which apply directly between you and them. Your device talks to the service you authorised; we do not route your data through anything. <strong>Easee</strong> operates within the EEA.</p>
+<p><strong>Our own backend.</strong> The part that stores anything — the installation identifier and push token — is deliberately located in <strong>Frankfurt, Germany</strong>, inside the EEA.</p>
+<p>One component sits outside it. The file of public charging prices is served from a Google storage bucket in the <strong>United States</strong>. That file contains no personal data whatsoever: it is a list of public charging stations and their published prices, identical for every user. Downloading it does reveal your device's IP address to Google in the US, which is why it is named here. The bucket is in the US because Google provides that storage at no cost only in US regions, and paying to relocate a public price list would not improve anyone's privacy.</p>
+<p>Google LLC is certified under the <strong>EU–US Data Privacy Framework</strong>, the European Commission's adequacy decision for transfers to the United States, and Google's Data Processing Addendum additionally incorporates EU Standard Contractual Clauses.</p>
 <p>Under the GDPR, the basis for these transfers is your <strong>explicit consent</strong> to connect that specific account (Article 49(1)(a)); you are told which company is involved before you connect, and you can disconnect at any time in Setup. Each of these providers additionally publishes its own transfer safeguards, such as EU Standard Contractual Clauses, which apply to the relationship between you and them.</p>
 <p>We recommend reading the privacy policy of any service before connecting it.</p>
 
 <h2>6. How long data is kept</h2>
-<p>On your device, until you delete it. Because there is no server, there is nothing for us to retain, and nothing for us to delete on your behalf.</p>
+<p>Everything meaningful — your history, settings and tokens — is on your device, until you delete it.</p>
+<p>The one record we hold (the installation identifier and push token) is kept while the installation exists. Uninstalling invalidates the push token immediately; the record itself is removed on request, and stale records are cleared periodically.</p>
 <p><strong>To erase everything:</strong></p>
 <ul>
   <li>Delete individual charging sessions in the app's history, or</li>
   <li>Disconnect your charger or vehicle in Setup, which deletes the stored tokens, or</li>
-  <li>Uninstall PluggedIn, which removes all app data from your device</li>
+  <li>Uninstall PluggedIn, which removes all app data from your device, or</li>
+  <li>Email <a href="mailto:pluggedin.app.support@gmail.com">pluggedin.app.support@gmail.com</a> to have the push-token record deleted as well — though note that because the identifier is anonymous, we will need you to supply it before we can find it</li>
 </ul>
 <p>Data already held by Easee, Tesla, Tessie, or Smartcar belongs to your account with them and must be deleted through them.</p>
 
 <h2>7. Security</h2>
 <p>Charger and vehicle access tokens are stored using <strong>Android's Keystore-backed encrypted storage</strong>, not in plain text. Those keys are bound to your device, which is also why the tokens do not survive a transfer to a new phone — you simply sign in again.</p>
 <p>All communication with external services uses HTTPS.</p>
-<p>No system is perfectly secure, but the strongest protection here is structural: there is no central database to breach, because there is no central database.</p>
+<p>Confidential credentials belonging to the app itself are held in <strong>Google Secret Manager</strong> and never ship inside the app. Moving them off the device is the main reason the backend exists.</p>
+<p>The backend's stored record is protected by security rules that let an installation read and write only its own entry, and by nothing else being there to reach.</p>
+<p>No system is perfectly secure, but the strongest protection here remains structural: the interesting data — what you charge, when, and what it cost — is never sent anywhere, so there is no database of it to breach.</p>
 
 <h2>8. Your rights under the GDPR</h2>
 <p>You have the right to access, correct, erase, restrict, and port your personal data, to object to processing, and to withdraw consent at any time.</p>
-<p>Because your data is on your device and not on any server we operate, you can exercise most of these directly and immediately — the app's Setup screen and your Android settings give you more direct control than a request to us could. If you would like help, or believe something here is inaccurate, contact <a href="mailto:pluggedin.app.support@gmail.com">pluggedin.app.support@gmail.com</a>.</p>
+<p>Because virtually all your data is on your device rather than on a server we operate, you can exercise most of these directly and immediately — the app's Setup screen and your Android settings give you more direct control than a request to us could.</p>
+<p>For the one record we do hold, write to <a href="mailto:pluggedin.app.support@gmail.com">pluggedin.app.support@gmail.com</a>. Be aware of an inherent limit: that record is filed under an anonymous identifier with nothing linking it to you, so we cannot locate it from your name or email alone. Under Article 11 of the GDPR we are not required to collect additional information purely to identify you — and doing so would make the system less private, not more.</p>
+<p>If you would like help, or believe something here is inaccurate, contact <a href="mailto:pluggedin.app.support@gmail.com">pluggedin.app.support@gmail.com</a>.</p>
 <p>You also have the right to lodge a complaint with the Danish Data Protection Agency:</p>
 <div class="addr">
   <div class="field"><b>Authority</b>Datatilsynet</div>
